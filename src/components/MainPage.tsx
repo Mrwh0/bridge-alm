@@ -120,6 +120,9 @@ export const MainPage = () => {
               bridged between {HOME_NETWORK_NAME} and {FOREIGN_NETWORK_NAME}. You can check current tx status, view
               validator info, and troubleshoot potential issues with bridge transfers.
             </p>
+            <AlertP className="is-left text-left">
+
+            </AlertP>
           </InfoAlert>
         )}
         {error && <ErrorAlert onClick={() => setError('')} error={error} />}
