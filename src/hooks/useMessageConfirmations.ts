@@ -103,7 +103,7 @@ export const useMessageConfirmations = ({
     () => {
       if (!receipt || !blockConfirmations || waitingBlocksResolved) return
 
-      let timeoutId: number
+      let timeoutId: NodeJS.Timeout
 
       const blockProvider = fromHome ? homeBlockNumberProvider : foreignBlockNumberProvider
       const interval = fromHome ? HOME_RPC_POLLING_INTERVAL : FOREIGN_RPC_POLLING_INTERVAL
@@ -145,7 +145,7 @@ export const useMessageConfirmations = ({
     () => {
       if (!fromHome || !receipt || !home.web3 || !home.bridgeContract || !hasCollectedSignatures) return
 
-      let timeoutId: number
+      let timeoutId: NodeJS.Timeout
       let isCancelled = false
 
       const messageHash = home.web3.utils.soliditySha3Raw(message.data)
@@ -189,7 +189,7 @@ export const useMessageConfirmations = ({
       if (!fromHome || !home.web3 || !collectedSignaturesEvent || !blockConfirmations) return
       if (waitingBlocksForExecutionResolved) return
 
-      let timeoutId: number
+      let timeoutId: NodeJS.Timeout
 
       const targetBlock = collectedSignaturesEvent.blockNumber + blockConfirmations
 

@@ -173,6 +173,7 @@ export const getFinalizationEvent = async (
           ),
         fromHome ? FOREIGN_RPC_POLLING_INTERVAL : HOME_RPC_POLLING_INTERVAL
       )
+      // @ts-ignore
       setTimeoutId(timeoutId)
     }
   }

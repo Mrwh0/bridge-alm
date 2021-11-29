@@ -11,7 +11,7 @@ export const useTransactionFinder = ({ txHash, web3 }: { txHash: string; web3: M
     () => {
       if (!txHash || !web3) return
 
-      let timeoutId: number
+      let timeoutId: NodeJS.Timeout
 
       const getReceipt = async () => {
         const txReceipt = await web3.eth.getTransactionReceipt(txHash)

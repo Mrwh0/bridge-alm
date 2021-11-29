@@ -35,7 +35,7 @@ export const useTransactionStatus = ({
       const isHome = chainId === home.chainId
       const web3 = isHome ? home.web3 : foreign.web3
 
-      let timeoutId: number
+      let timeoutId: NodeJS.Timeout
 
       const getReceipt = async () => {
         setLoading(true)

@@ -164,6 +164,7 @@ export const getConfirmationsForTx = async (
           ),
         HOME_RPC_POLLING_INTERVAL
       )
+      // @ts-ignore
       setTimeoutId(timeoutId)
     }
   }
